@@ -73,9 +73,9 @@
   </div>
 
   <footer class="layout__footer">
-    <section class="layout__footer__top" *ngIf="links.topfooter">
+    <!-- <section class="layout__footer__top" *ngIf="links.topfooter">
       <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__footer__top__logo"></a>
-      <div class="layout__footer__top__category" *ngFor="let category of links.topfooter">
+     <div class="layout__footer__top__category" *ngFor="let category of links.topfooter">
         <span class="layout__footer__top__category__title">{{category.title | translate}}</span>
         <div class="layout__footer__top__category__title_border"></div>
         <ul class="layout__footer__top__category__links">
@@ -85,8 +85,9 @@
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
     <section class="layout__footer__bottom">
+      <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__footer__top__logo"> </a>
       <ul>
         <li>
           <gv-link path="cookies" title="{{ 'route.cookies' | translate }}"></gv-link>
