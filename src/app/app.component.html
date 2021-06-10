@@ -23,8 +23,7 @@
 
   <div #homepageBackground class="layout__header__homepage__background">
     <div *ngIf="isHomepage" class="layout__header__homepage__title">
-      <h1>{{'homepage.title' | translate}}</h1>
-      <gv-button (:gv-button:click)="goTo('/catalog')" outlined>{{'homepage.explore' | translate}}</gv-button>
+      <h1>{{'homepage.title' | translate}}</h1> 
       <gv-button (:gv-button:click)="goTo('/user/registration')" *ngIf="displaySignUp()"
                  outlined>{{'homepage.signup' | translate}}</gv-button>
     </div>
@@ -73,19 +72,6 @@
   </div>
 
   <footer class="layout__footer">
-    <!-- <section class="layout__footer__top" *ngIf="links.topfooter">
-      <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__footer__top__logo"></a>
-     <div class="layout__footer__top__category" *ngFor="let category of links.topfooter">
-        <span class="layout__footer__top__category__title">{{category.title | translate}}</span>
-        <div class="layout__footer__top__category__title_border"></div>
-        <ul class="layout__footer__top__category__links">
-          <li *ngFor="let link of category.links">
-            <gv-link [path]="link.path" [target]="link.target"
-                     title="{{ link.title | translate }}"></gv-link>
-          </li>
-        </ul>
-      </div>
-    </section> -->
     <section class="layout__footer__bottom">
       <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__footer__top__logo"> </a>
       <ul>

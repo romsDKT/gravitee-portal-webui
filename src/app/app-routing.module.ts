@@ -56,12 +56,6 @@ import { TicketsHistoryComponent } from './components/gv-tickets-history/tickets
 export const routes: Routes = [
   { path: '', component: HomepageComponent, data: { title: i18n('route.homepage'), menu: false, animation: { type: 'fade' } } },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-    data: { title: i18n('route.dashboard'), expectedRole: Role.AUTH_USER, animation: { type: 'fade' }, menu: {} },
-    canActivate: [AuthGuardService],
-  },
-  {
     path: 'catalog',
     data: {
       title: i18n('route.catalog'),

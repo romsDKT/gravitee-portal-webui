@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 .layout {
-  min-height: 100vh;
+  min-height: 94vh;
   display: flex;
   flex-direction: column;
 }
