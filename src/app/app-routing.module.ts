@@ -202,6 +202,250 @@ export const routes: Routes = [
       }
     ]
   },
+  // {
+  //   path: 'support',
+  //   data: {
+  //     title: 'Support',
+  //     menu: { hiddenPaths: ['categories/:categoryId', 'api/'] },
+  //     fallbackRedirectTo: 'support/all',
+  //   },
+  //   children: [
+  //     { path: '', redirectTo: 'categories', pathMatch: 'full' },
+  //     { path: 'search', component: CatalogSearchComponent },
+  //     {
+  //       path: 'api/:apiId',
+  //       data: {
+  //         menu: { slots: { top: GvHeaderItemComponent }, hiddenPaths: ['subscribe'] }
+  //       },
+  //       resolve: {
+  //         api: ApiResolver,
+  //         apiInformations: ApiInformationsResolver,
+  //         permissions: PermissionsResolver,
+  //       },
+  //       children: [
+  //         {
+  //           path: '',
+  //           component: ApiGeneralComponent,
+  //           data: {
+  //             menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //             icon: 'general:clipboard',
+  //             title: i18n('route.catalogApi'),
+  //             animation: { type: 'slide', group: 'api', index: 1 }
+  //           },
+  //           resolve: {
+  //             apiHomepage: ApiHomepageResolver,
+  //           },
+  //         },
+  //         {
+  //           path: 'doc',
+  //           component: ApiDocumentationComponent,
+  //           data: {
+  //             menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //             icon: 'home:library',
+  //             title: i18n('route.catalogApiDocumentation'),
+  //             animation: { type: 'fade' }
+  //           }
+  //         },
+  //         {
+  //           path: 'contact',
+  //           component: ApiContactComponent,
+  //           canActivate: [AuthGuardService, FeatureGuardService],
+  //           data: {
+  //             menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //             icon: 'communication:contact#1',
+  //             title: i18n('route.catalogApiContact'),
+  //             expectedFeature: FeatureEnum.contact,
+  //             expectedRole: Role.AUTH_USER,
+  //             animation: { type: 'slide', group: 'api', index: 3 }
+  //           }
+  //         },
+  //         {
+  //           path: 'tickets',
+  //           component: TicketsHistoryComponent,
+  //           data: {
+  //             title: i18n('route.tickets'),
+  //             icon: 'communication:snoozed-mail',
+  //             expectedFeature: FeatureEnum.contact,
+  //             expectedRole: Role.AUTH_USER,
+  //             animation: { type: 'slide', group: 'user', index: 4 }
+  //           }
+  //         },
+  //         {
+  //           path: 'subscribe',
+  //           component: ApiSubscribeComponent,
+  //           canActivate: [SubscribeGuardService],
+  //           data: {
+  //             title: i18n('route.catalogApiSubscribe'),
+  //           }
+  //         },
+  //       ]
+  //     },
+  //     {
+  //       path: 'categories',
+  //       component: CategoriesComponent,
+  //       canActivate: [FeatureGuardService],
+  //       data: {
+  //         expectedFeature: FeatureEnum.categoryMode,
+  //         title: i18n('route.catalogCategories'),
+  //         icon: 'layout:layout-arrange',
+  //         menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //         animation: { type: 'slide', group: 'catalog', index: 1 }
+  //       }
+  //     },
+  //     {
+  //       path: 'categories/:categoryId',
+  //       component: FilteredCatalogComponent,
+  //       resolve: { category: CategoryResolver },
+  //       data: {
+  //         title: i18n('route.catalogCategory'),
+  //         menu: { hide: true, slots: { top: GvHeaderItemComponent, 'right-transition': GvSearchApiComponent } },
+  //       },
+  //     },
+  //     {
+  //       path: 'all',
+  //       component: FilteredCatalogComponent,
+  //       data: {
+  //         title: i18n('route.catalogAll'),
+  //         icon: 'code:git#2',
+  //         menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //         filterApiQuery: FilterApiQuery.ALL,
+  //         animation: { type: 'slide', group: 'catalog', index: 2 }
+  //       }
+  //     },
+  //     {
+  //       path: 'featured',
+  //       component: FilteredCatalogComponent,
+  //       data: {
+  //         title: i18n('route.catalogFeatured'),
+  //         icon: 'home:flower#2',
+  //         menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //         filterApiQuery: FilterApiQuery.FEATURED,
+  //         animation: { type: 'slide', group: 'catalog', index: 3 }
+  //       }
+  //     },
+  //     {
+  //       path: 'starred',
+  //       component: FilteredCatalogComponent,
+  //       canActivate: [FeatureGuardService],
+  //       data: {
+  //         title: i18n('route.catalogStarred'),
+  //         icon: 'general:star',
+  //         menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //         filterApiQuery: FilterApiQuery.STARRED,
+  //         expectedFeature: FeatureEnum.rating,
+  //         animation: { type: 'slide', group: 'catalog', index: 4 }
+  //       }
+  //     },
+  //     {
+  //       path: 'trendings',
+  //       component: FilteredCatalogComponent,
+  //       data: {
+  //         title: i18n('route.catalogTrending'),
+  //         icon: 'home:fireplace',
+  //         menu: { slots: { 'right-transition': GvSearchApiComponent } },
+  //         filterApiQuery: FilterApiQuery.TRENDINGS,
+  //         animation: { type: 'slide', group: 'catalog', index: 5 }
+  //       }
+  //     }
+  //   ]
+  // },
+  {
+    path: 'support', data:
+    {
+      title: 'Support',
+      menu: { hiddenPaths: ['login', 'logout'] },
+      fallbackRedirectTo: 'support/all',
+    },
+    children: [
+      { path: '', redirectTo: 'support', pathMatch: 'full' },
+      {
+        path: 'create',
+        // component: UserNotificationComponent,
+        redirectTo: 'https://google.com'
+      },
+      {
+        path: 'account',
+        component: UserAccountComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          title: i18n('route.user'),
+          icon: 'general:user',
+          expectedRole: Role.AUTH_USER,
+          animation: { type: 'slide', group: 'user', index: 1 }
+        },
+      },
+      {
+        path: 'contact',
+        component: UserContactComponent,
+        canActivate: [AuthGuardService, FeatureGuardService],
+        data: {
+          title: i18n('route.contact'),
+          icon: 'communication:contact#1',
+          expectedFeature: FeatureEnum.contact,
+          expectedRole: Role.AUTH_USER,
+          animation: { type: 'slide', group: 'user', index: 2 }
+        }
+      },
+      {
+        path: 'tickets',
+        component: TicketsHistoryComponent,
+        canActivate: [AuthGuardService, FeatureGuardService],
+        data: {
+          title: i18n('route.tickets'),
+          icon: 'communication:snoozed-mail',
+          expectedFeature: FeatureEnum.contact,
+          expectedRole: Role.AUTH_USER,
+          animation: { type: 'slide', group: 'user', index: 3 }
+        }
+      },
+      {
+        path: 'notifications',
+        component: UserNotificationComponent,
+        canActivate: [AuthGuardService, FeatureGuardService],
+        data: {
+          title: i18n('route.notifications'),
+          icon: 'general:notifications#2',
+          expectedRole: Role.AUTH_USER,
+          animation: { type: 'slide', group: 'user', index: 4 }
+        }
+      },
+      {
+        path: 'logout',
+        component: LogoutComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          title: i18n('route.logout'),
+          separator: true,
+          icon: 'home:door-open',
+          expectedRole: Role.AUTH_USER
+        }
+      },
+      {
+        path: 'registration',
+        component: RegistrationComponent,
+        canActivate: [AuthGuardService],
+        data: { expectedRole: Role.GUEST, animation: { type: 'fade' } }
+      },
+      {
+        path: 'registration/confirm/:token',
+        component: RegistrationConfirmationComponent,
+        canActivate: [AuthGuardService],
+        data: { expectedRole: Role.GUEST, animation: { type: 'fade' } }
+      },
+      {
+        path: 'resetPassword',
+        component: ResetPasswordComponent,
+        canActivate: [AuthGuardService],
+        data: { expectedRole: Role.GUEST, animation: { type: 'fade' } }
+      },
+      {
+        path: 'resetPassword/confirm/:token',
+        component: ResetPasswordConfirmationComponent,
+        canActivate: [AuthGuardService],
+        data: { expectedRole: Role.GUEST, animation: { type: 'fade' } }
+      }
+    ]
+  },
   {
     path: 'user', data: { menu: { hiddenPaths: ['login', 'logout'] } },
     children: [
