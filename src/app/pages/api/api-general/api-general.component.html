@@ -109,6 +109,19 @@
           </li>
         </ul>
       </div>
+        <div class="info" *ngIf="apiInformations.length > 0">
+          <ul class="info__miscellaneous">
+            <li class="info__miscellaneous_item" *ngFor="let apiInformation of apiInformations">
+              <span *ngIf="apiInformation.name !== 'docAPI'"> {{ apiInformation.name | translate}} : {{
+                apiInformation.value }}</span>
+              <span *ngIf="apiInformation.name === 'docAPI' "> {{ apiInformation.name
+                | translate}} : <gv-button link [href]="apiInformation.value"
+                  (:gv-button:click)="goToExtern(apiInformation.value)"> {{ getDocNameByFullURL(apiInformation.value) }} <span>
+                    </span></gv-button>  </span>
+
+            </li>
+          </ul>
+        </div>
 
         <div *ngIf="currentApi.entrypoints && currentApi.entrypoints.length > 0" class="info">
           <h4 class="title">{{ 'api.information.entrypoints' | translate }}</h4>

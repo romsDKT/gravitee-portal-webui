@@ -331,6 +331,16 @@ export class ApiGeneralComponent implements OnInit {
     return this.ratingForm != null;
   }
 
+
+  getDocNameByFullURL(url) {
+    const array = url.split('/');
+    if (url === '/') {
+      return url;
+    } else if (array[array.length - 1] === "") {
+      return array[array.length - 2]
+    } else { return array[array.length - 1] }
+  }
+
   hasValidRatingForm() {
     return this.hasRatingForm() && this.ratingForm.valid;
   }
