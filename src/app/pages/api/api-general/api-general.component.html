@@ -101,14 +101,6 @@
     <div *ngIf="currentApi" class="page__box">
       <div class="page__box-content">
 
-      <div class="info" *ngIf="apiInformations.length > 0">
-        <ul class="info__miscellaneous">
-          <li class="info__miscellaneous_item" *ngFor="let apiInformation of apiInformations">
-            <span *ngIf="apiInformation.name != 'Doc-Api'">{{ apiInformation.name | translate}} :  {{ apiInformation.value }} </span>
-            <span *ngIf="apiInformation.name === 'Doc-Api' && apiInformation.value !== 'none' ">{{ apiInformation.name | translate}} :  <gv-button  link [href]="apiInformation.value" (:gv-button:click)="goToExtern(apiInformation.value)"><span>link</span></gv-button></span> 
-          </li>
-        </ul>
-      </div>
         <div class="info" *ngIf="apiInformations.length > 0">
           <ul class="info__miscellaneous">
             <li class="info__miscellaneous_item" *ngFor="let apiInformation of apiInformations">
