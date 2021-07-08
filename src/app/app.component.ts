@@ -17,6 +17,7 @@ import '@gravitee/ui-components/wc/gv-header';
 import '@gravitee/ui-components/wc/gv-menu';
 import '@gravitee/ui-components/wc/gv-message';
 import '@gravitee/ui-components/wc/gv-nav';
+import '@gravitee/ui-components/wc/gv-nav-custom';
 import '@gravitee/ui-components/wc/gv-user-menu';
 import '@gravitee/ui-components/wc/gv-theme';
 import {

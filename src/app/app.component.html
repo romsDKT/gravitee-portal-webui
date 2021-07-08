@@ -35,8 +35,8 @@
       <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__header__logo"
          [ngClass]="{'layout__header__homepage__logo': isHomepage}"></a>
 
-      <gv-nav *ngIf="!forceLogin() || (forceLogin() && !isInLoginOrRegistration())"
-              [routes]="mainRoutes" [ngClass]="{'layout__nav': isHomepage}"></gv-nav>
+      <gv-nav-custom *ngIf="!forceLogin() || (forceLogin() && !isInLoginOrRegistration())"
+              [routes]="mainRoutes" [ngClass]="{'layout__nav': isHomepage}" style="justify-self: flex-end"></gv-nav-custom>
 
       <div class="layout__nav__container" [ngClass]="{'layout__nav': displayShadowNav()}"
            *ngIf="!isInLoginOrRegistration()">
